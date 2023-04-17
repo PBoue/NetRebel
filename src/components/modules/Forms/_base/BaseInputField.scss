@@ -1,0 +1,30 @@
+@import "@/styles/colors";
+
+@mixin baseInputField($inverted: false) {
+    appearance: none;
+    border: 1px solid $darkBlue;
+    background: $oldWhite;
+    color: $darkBlue;
+    padding: 8px 20px;
+    border-radius: 0;
+    font-size: 16px;
+    width: 100%;
+    min-height: 48px;
+    transition: all 0.2s ease-out, box-shadow 0.3s ease-out;
+    @if $inverted {
+        border-color: $oldWhite;
+        background: $darkBlue;
+        color: $oldWhite;
+    }
+    &:focus {
+        @include baseInputFieldFocus();
+    }
+}
+@mixin baseInputFieldFocus() {
+    background-color: $magenta;
+    color: $darkBlue;
+}
+
+@mixin baseInputFieldError($inverted: false) {
+    border-color: $error;
+}

@@ -1,0 +1,184 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/styles/z-indexes";
+
+.Modal {
+    position: fixed;
+    z-index: $zIndexModal;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.Modal__backdrop {
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.8);
+    .Modal--closeOnBackdrop & {
+        cursor: pointer;
+    }
+}
+
+.Modal__dialog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    background: $primary;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+.Modal__warp {
+    width: 20%;
+    position: absolute;
+    overflow: hidden;
+    max-height: 100%;
+    &:after {
+        content: "";
+        display: block;
+        padding-top: 120%;
+    }
+    .AnimatedWarp {
+        position: absolute;
+        width: 200%;
+        transform: translate(-50%, -50%) scale(1) rotate(-27deg);
+        left: -7%;
+        top: 20%;
+        path {
+            stroke-width: 1px;
+        }
+    }
+}
+.Modal__header,
+.Modal__content {
+    position: relative;
+    z-index: 1;
+}
+
+.Modal__header {
+    padding: 20px 15%;
+    width: 100%;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 44px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.Modal__content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 20px 15%;
+    padding-top: 0;
+    overflow: auto;
+    .Modal--noPadding & {
+        padding: 0;
+    }
+}
+
+.Modal__footer {
+    padding: 20px 15%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.Modal__close {
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 24px;
+    color: $black;
+}
+
+//// Sizes - on small screens all modals will overlay the whole screen
+@include md() {
+    .Modal__dialog {
+        height: auto;
+        max-height: calc(100vh - 40px);
+    }
+    .Modal--small {
+        .Modal__dialog {
+            max-width: 50vw;
+        }
+    }
+
+    .Modal--medium {
+        .Modal__dialog {
+            max-width: 60vw;
+        }
+    }
+
+    .Modal--large {
+        .Modal__dialog {
+            max-width: 80vw;
+        }
+    }
+    .Modal--fullscreen {
+        .Modal__dialog {
+            max-width: none;
+            max-height: none;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+//// Animations
+
+.Modal__root-enter {
+    .Modal__backdrop,
+    .Modal__dialog {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .Modal__backdrop {
+        transition-delay: 0s;
+    }
+    .Modal__dialog {
+        transition-delay: 0.1s;
+    }
+}
+
+.Modal__root-enter-active {
+    .Modal__backdrop,
+    .Modal__dialog {
+        opacity: 1;
+    }
+}
+
+.Modal__root-exit {
+    .Modal__backdrop,
+    .Modal__dialog {
+        transition: opacity 0.2s;
+        opacity: 1;
+    }
+}
+
+.Modal__root-exit-active {
+    .Modal__backdrop,
+    .Modal__dialog {
+        opacity: 0;
+    }
+    .Modal__backdrop {
+        transition-delay: 0.1s;
+    }
+    .Modal__dialog {
+        transition-delay: 0s;
+    }
+}

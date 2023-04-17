@@ -1,0 +1,34 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.CalendarYear {
+    display: flex;
+    width: 80px;
+    height: 66px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    background: $darkBlue;
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    opacity: 1;
+    border: 1px solid $darkBlue;
+    color: rgba($white, 0.5);
+    cursor: pointer;
+    &:hover {
+        background-color: $magenta;
+        border-color: $magenta;
+        color: $darkBlue;
+    }
+}
+.CalendarYear--isSelected {
+    background: $magenta;
+    color: $darkBlue;
+    border-color: $magenta;
+}
+
+.CalendarYear--containsToday {
+    border-color: $magenta;
+}
+.CalendarYear--isInDecade {
+    color: rgba($white, 1);
+}

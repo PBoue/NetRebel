@@ -1,0 +1,82 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/forms/_base/BaseInputField";
+
+.Dropdown {
+    display: flex;
+    position: relative;
+}
+.Dropdown__select {
+    @include baseInputField();
+    padding-right: 40px;
+    cursor: pointer;
+    &:focus {
+        @include baseInputFieldFocus();
+    }
+    option {
+        -moz-appearance: none;
+        appearance: none;
+        @include baseInputFieldFocus();
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.Dropdown--inverted {
+    .Dropdown__select {
+        @include baseInputField(true);
+    }
+}
+
+.Dropdown--inline {
+    width: unset;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding-right: 24px;
+    .Dropdown__select {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        z-index: 1;
+        min-height: auto;
+    }
+    .Dropdown__icon {
+        color: $magenta;
+        width: 24px;
+        .Icon {
+            height: 24px;
+        }
+        path {
+            fill: $magenta;
+        }
+    }
+    .Dropdown--error {
+        display: none;
+    }
+}
+
+.Dropdown__icon {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    height: calc(100% - 2px);
+    background: none;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Dropdown--inverted & {
+        color: $white;
+    }
+}
+
+.Dropdown--error {
+    .Dropdown__select {
+        @include baseInputFieldError();
+    }
+}

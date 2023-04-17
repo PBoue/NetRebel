@@ -1,0 +1,43 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/styles/z-indexes";
+
+.Flyout {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.Flyout__content {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: $zIndexFlyout;
+    padding: 16px;
+    color: $white;
+    background: $darkBlue;
+    .Flyout--noPadding & {
+        padding: 0;
+    }
+    .Flyout--fullWidth & {
+        width: 100%;
+    }
+}
+
+.Flyout__content-enter,
+.Flyout__content-exit {
+    transition: opacity 0.2s;
+}
+
+.Flyout__content-enter {
+    opacity: 0;
+}
+.Flyout__content-enter-active {
+    opacity: 1;
+}
+.Flyout__content-exit {
+    opacity: 1;
+}
+.Flyout__content-exit-active {
+    opacity: 0;
+}

@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+@import "../../../styles/media-queries";
+@import "../../../styles/variables";
+.Container {
+    margin: 0 auto;
+    padding: 0 $mobilePagePadding;
+    width: 100%;
+    @include md() {
+        padding: 0 $tabletPagePadding;
+    }
+    @include xl() {
+        padding: 0;
+    }
+}
+
+.Container--size--default {
+    max-width: 1190px;
+}
+
+.Container--size--small {
+    max-width: 800px;
+}

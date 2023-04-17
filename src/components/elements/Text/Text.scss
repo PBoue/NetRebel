@@ -1,0 +1,72 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.Text {
+    i {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+.Text--italic {
+    font-style: italic;
+}
+
+.Text--type--bodyHuge {
+    font-weight: 400;
+    @include lg {
+        font-size: 36px;
+        line-height: 48.24px;
+    }
+}
+
+.Text--type--bodyBig {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27.29px;
+}
+
+.Text--type--bodyBold,
+.Text--type--body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24.26px;
+}
+
+.Text--type--bodyBold {
+    font-weight: 700;
+}
+
+.Text--type--bodySmall {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.Text--type--bodySmallBold {
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.Text--type--specialHeader {
+    text-transform: uppercase;
+    color: $magenta;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 14px;
+    letter-spacing: 0.295em;
+    margin-right: -0.295em;
+}
+
+.Text--type--intro {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27.29px;
+    @include md() {
+        font-size: 36px;
+        line-height: 54.58px;
+    }
+}

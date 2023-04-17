@@ -1,0 +1,62 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.TextLink {
+    display: inline;
+    cursor: pointer;
+
+    &:hover {
+        .TextLink__arrow {
+            animation: TextLinkArrowAnimation 0.4s ease-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+.TextLink:not(.TextLink--type-unstyled) {
+    font-size: 18px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.295em;
+    font-weight: 700;
+}
+
+.TextLink--type-primary {
+    color: $primary;
+}
+.TextLink__text {
+    .TextLink--withArrow & {
+        margin-right: 0.5em;
+    }
+}
+.TextLink__arrow {
+    display: inline-flex;
+    color: $primary;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        display: flex;
+        overflow: visible;
+        width: 1.11em;
+        height: 0.55em;
+    }
+}
+
+@keyframes TextLinkArrowAnimation {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}

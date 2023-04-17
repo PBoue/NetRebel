@@ -1,0 +1,35 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.CalendarMonth {
+    display: flex;
+    width: 80px;
+    height: 66px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    background: $darkBlue;
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    opacity: 1;
+    color: rgba($white, 0.5);
+    border: 1px solid $darkBlue;
+    cursor: pointer;
+    &:hover {
+        background-color: $magenta;
+        border-color: $magenta;
+        color: $darkBlue;
+    }
+}
+.CalendarMonth--isSelected {
+    background: $magenta;
+    color: $darkBlue;
+    border-color: $magenta;
+}
+
+.CalendarMonth--containsToday {
+    border-color: $magenta;
+}
+
+.CalendarMonth--isInYear {
+    color: rgba($white, 1);
+}

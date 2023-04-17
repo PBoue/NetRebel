@@ -1,0 +1,9 @@
+$glow: 10px 10px 30px rgba(248, 183, 152, 0.5);
+
+@mixin shadow($type) {
+    @if $type == glow {
+        box-shadow: $glow;
+    } @else {
+        @error "unkown type #{$type}. possible types: glow";
+    }
+}

@@ -1,0 +1,31 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.AutoComplete {
+    .Flyout__content {
+        border: 1px solid $darkBlue;
+        border-top: none;
+    }
+}
+
+.AutoComplete__result {
+    background: $magenta;
+    padding: 14px 0;
+}
+
+.AutoComplete__result__label {
+    color: $darkBlue;
+    padding: 0 20px 5px 20px;
+    display: flex;
+}
+
+.AutoComplete__result__option {
+    cursor: pointer;
+    padding: 0 20px;
+    transition: all 0.2s ease-out;
+    color: $darkBlue;
+    &.AutoComplete__result__option--selected,
+    &:hover {
+        background: $darkBlue;
+        color: $white;
+    }
+}

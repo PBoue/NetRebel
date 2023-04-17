@@ -1,0 +1,29 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.FormField {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.FormField__input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.FormField__label {
+    color: $darkBlue;
+    font-size: 14px;
+
+    .FormField--inverted & {
+        color: $oldWhite;
+    }
+
+    .FormField--error & {
+        color: $error;
+    }
+}

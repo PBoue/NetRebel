@@ -1,0 +1,43 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.CalendarDay {
+    display: flex;
+    width: 50px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    background: $darkBlue;
+    transition: 0.2s ease-out;
+    font-weight: 700;
+    opacity: 1;
+    color: rgba($white, 0.5);
+    border: 1px solid $darkBlue;
+    &:not(.CalendarDay--disabled) {
+        cursor: pointer;
+    }
+    &:not(.CalendarDay--disabled):not(.CalendarDay--isSelected):hover {
+        cursor: pointer;
+        background-color: $magenta;
+        border-color: $magenta;
+        color: $darkBlue;
+    }
+}
+.CalendarDay--isInCurrentMonth {
+    color: rgba($white, 1);
+}
+
+.CalendarDay--isSelected {
+    background: $magenta;
+    color: $darkBlue;
+    border-color: $magenta;
+}
+
+.CalendarDay--isToday {
+    border-color: $magenta;
+}
+
+.CalendarDay--disabled {
+    border-color: $darkBlue;
+    color: rgba($white, 0.2);
+}

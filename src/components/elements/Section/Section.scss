@@ -1,0 +1,44 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+/*  SECTION
+    SECTION CONTENT
+    ------- */
+.Section {
+    clear: both;
+    display: flex;
+    padding-top: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Section__contentWrapper {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1400px;
+    gap: 30px;
+}
+
+
+/* SECTION HEADLINE 
+   ---------------- */
+
+.Section__headline {
+    color: $primary;
+    font-weight: 300;
+    text-align: center;
+    @include lg {
+        white-space: nowrap;
+        .Headline {
+            line-height: 1.4;
+        }
+    }
+}
+
+.Section__subheadline {
+    color: $grey__light;
+    padding: 20px 0;
+}

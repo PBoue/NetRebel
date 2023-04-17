@@ -1,0 +1,42 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.BaseRibbon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    svg {
+        position: absolute;
+    }
+}
+.BaseRibbon__wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.BaseRibbon__left,
+.BaseRibbon__right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: absolute;
+    background: $darkBlue;
+}
+.BaseRibbon__left {
+    left: 0;
+}
+.BaseRibbon__right {
+    right: 0;
+}
+.BaseRibbon__middle {
+    display: block;
+    width: 100%;
+    max-width: 2200px;
+    background: $darkBlue;
+    margin: 0 auto;
+    aspect-ratio: 2/1;
+}

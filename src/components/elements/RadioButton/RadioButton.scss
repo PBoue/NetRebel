@@ -1,0 +1,61 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.RadioButton {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.RadioButton--disabled {
+    opacity: 0.5;
+}
+.RadioButton__input {
+    position: fixed;
+    left: -20000px;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.RadioButton__label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    height: 20px;
+    font-size: 14px;
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $darkBlue;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+    &:after {
+        display: block;
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: $magenta;
+        left: 3px;
+        top: 3px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+        border-radius: 50%;
+    }
+}
+.RadioButton__input:checked + .RadioButton__label {
+    &::after {
+        opacity: 1;
+    }
+}

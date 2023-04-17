@@ -1,0 +1,23 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/forms/_base/BaseInputField";
+.Textarea {
+    display: flex;
+}
+.Textarea__input {
+    @include baseInputField();
+    resize: none;
+    height: 200px;
+}
+
+.Textarea--inverted {
+    .Textarea__input {
+        @include baseInputField(true);
+    }
+}
+
+.Textarea--error {
+    .Textarea__input {
+        @include baseInputFieldError();
+    }
+}

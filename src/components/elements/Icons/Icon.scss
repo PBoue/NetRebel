@@ -1,0 +1,10 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.Icon {
+    display: inline-flex;
+    overflow: visible;
+
+    svg path {
+        fill: currentColor;
+    }
+}

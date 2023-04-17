@@ -1,0 +1,33 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.Headline {
+    &.h1 {
+        font-size: 54px;
+        line-height: 54px;
+        font-weight: 800;
+
+        @include md() {
+            font-size: 72px;
+            line-height: 72px;
+        }
+    }
+
+    &.h2 {
+        font-size: 36px;
+        line-height: 47px;
+        font-weight: 700;
+    }
+
+    &.h3 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    &.h4 {
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

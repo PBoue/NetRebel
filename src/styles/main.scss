@@ -1,0 +1,62 @@
+@import "reset";
+@import "colors";
+@import "mixins.scss";
+@import "fonts.scss";
+@import "media-queries";
+@import "layout";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    /* Adjust font size */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* Font varient */
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    background: $black;
+    color: $white;
+}
+textarea,
+input,
+select,
+button {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+}
+
+optgroup,
+option {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+    color: inherit;
+    &:hover {
+        color: $secondary;
+    }
+}
+
+a.noStyles {
+    &:hover {
+        color: inherit;
+    }
+}
+

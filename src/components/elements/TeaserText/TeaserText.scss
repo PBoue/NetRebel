@@ -1,0 +1,37 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.TeaserText {
+}
+.TeaserText--withPointer {
+    cursor: pointer;
+}
+.TeaserText--inverted {
+    color: $white;
+}
+
+.TeaserText__headline + .TeaserText__text {
+    margin-top: 15px;
+}
+
+.TeaserText__title {
+    text-transform: uppercase;
+}
+
+.TeaserText__date {
+    margin-bottom: 10px;
+}
+
+.TeaserText__linkArrow {
+    position: absolute;
+    font-size: 1em;
+    transform: translate(8px, 2px);
+    color: $magenta;
+    svg {
+        width: 1.1em;
+    }
+}
+
+.TeaserText__link {
+    margin-top: 20px;
+}

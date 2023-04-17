@@ -1,0 +1,6 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.FormFieldError {
+    color: $error;
+    font-size: 14px;
+}

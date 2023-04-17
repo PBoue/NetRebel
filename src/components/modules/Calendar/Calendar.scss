@@ -1,0 +1,73 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.Calendar {
+    background: $darkBlue;
+    width: 350px;
+    color: $white;
+    box-sizing: content-box;
+    padding: 24px;
+    min-height: 304px;
+}
+.Calendar__header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+.Calendar__header__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+}
+.Calendar__header__next,
+.Calendar__header__prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    flex-grow: 0;
+    color: $darkBlue70;
+}
+
+.Calendar__calendar {
+    display: flex;
+    flex-direction: column;
+}
+
+.Calendar__calendar__weekDays {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 14px;
+}
+
+.Calendar__calendar__weekDay {
+    width: 50px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Calendar__calendar__weeks {
+    display: flex;
+    flex-direction: column;
+}
+.Calendar__calendar__week {
+    display: flex;
+    flex-direction: row;
+}
+
+.Calendar__view__months,
+.Calendar__view__years {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

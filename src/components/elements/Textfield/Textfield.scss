@@ -1,0 +1,22 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/forms/_base/BaseInputField";
+
+.Textfield {
+    display: flex;
+}
+.Textfield__input {
+    @include baseInputField();
+}
+
+.Textfield--inverted {
+    .Textfield__input {
+        @include baseInputField(true);
+    }
+}
+
+.Textfield--error {
+    .Textfield__input {
+        @include baseInputFieldError();
+    }
+}

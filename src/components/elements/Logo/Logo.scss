@@ -1,0 +1,41 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.Logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    color: $primary;
+    font-size: 24px;
+    font-weight: 800;
+
+    svg {
+        overflow: visible;
+        transition: all 0.3s ease-out;
+        width: 55px;
+        height: 55px;
+        fill: $primary;
+    }
+    
+    @include sm {
+        gap: 20px;
+        svg {
+            width: 92px;
+            height: 92px;
+        }
+    }
+
+    &:hover {
+        color: $secondary;
+        cursor: pointer;
+
+        svg {
+            fill: $secondary;
+        }
+    }
+}
+
+.Logo--clickable {
+    cursor: pointer;
+}

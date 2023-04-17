@@ -1,0 +1,72 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+$yellowBlur: #f7e14c;
+$pinkBlur: #ff1dc0;
+
+$pinkDuration: 40s;
+$yellowDuration: 60s;
+
+.AnimatedCloud {
+    position: relative;
+    width: 650px;
+    height: 650px;
+}
+
+.AnimatedCloud__blurWrapper {
+    position: absolute;
+    filter: blur(120px);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+@-moz-document url-prefix() {
+    .AnimatedCloud__blurWrapper {
+        opacity: 0.7;
+    }
+}
+
+.AnimatedCloud__content {
+    position: relative;
+}
+
+.AnimatedCloud__pinkBlur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $pinkBlur;
+    clip-path: path(
+        "M319.411 416.682C363.824 407.64 395.336 396.71 419.932 358.646C467.885 284.436 395.2 159.784 306.9 162.869C237.109 165.308 218.12 231.535 183.124 291.965C167.683 318.629 150.403 333.208 150.951 364C152.176 432.903 251.836 430.439 319.411 416.682Z"
+    );
+    animation: cloudAnimation $pinkDuration infinite;
+    animation-timing-function: linear;
+    transform-origin: 40% 40%;
+}
+
+.AnimatedCloud__yellowBlur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $yellowBlur;
+    clip-path: path(
+        "M396.642 388.893C429.599 382.183 452.982 374.073 471.233 345.828C506.816 290.761 452.881 198.263 387.358 200.553C335.571 202.363 321.48 251.506 295.512 296.347C284.053 316.133 271.231 326.952 271.637 349.8C272.547 400.929 346.499 399.101 396.642 388.893Z"
+    );
+    animation: cloudAnimation $yellowDuration infinite;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    transform-origin: 55% 55%;
+}
+
+@keyframes cloudAnimation {
+    0% {
+        transform: scale(1) translate3d(0px, 0px, 0px) rotate(0deg);
+    }
+    50% {
+        transform: scale(0.8) translate3d(0px, 0px, 0px) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) translate3d(0px, 0px, 0px) rotate(360deg);
+    }
+}

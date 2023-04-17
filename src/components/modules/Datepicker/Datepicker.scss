@@ -1,0 +1,30 @@
+@import "@/styles/colors";
+@import "@/forms/_base/baseInputField";
+.Datepicker {
+    display: flex;
+    flex-direction: column;
+
+    .Flyout__content {
+        border: 1px solid $darkBlue;
+        border-top: none;
+    }
+}
+.Datepicker__input {
+    @include baseInputField();
+}
+
+.Datepicker--inverted {
+    .Datepicker__input {
+        @include baseInputField(true);
+    }
+    .Flyout__content {
+        border: 1px solid $oldWhite;
+        border-top: none;
+    }
+}
+
+.Datepicker--error {
+    .Datepicker__input {
+        @include baseInputFieldError();
+    }
+}
