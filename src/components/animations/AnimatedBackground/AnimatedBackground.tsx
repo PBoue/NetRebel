@@ -1,7 +1,7 @@
 "use client"
 
 import React, { ReactNode, useRef } from "react";
-import { useAnimationFrame } from "@/hooks/useAnimationFrame";
+import { useAnimationFrame } from "@/hooks";
 
 import "./AnimatedBackground.scss";
 

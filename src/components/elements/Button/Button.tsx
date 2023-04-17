@@ -1,10 +1,12 @@
+'use Client'
+
 import "./Button.scss";
 
 import classNames from "classnames";
 import React, { ReactNode } from "react";
 
-import { Icon, IconName } from "@/elements/Icons";
-import { ProgressBar } from "@/elements/ProgressBar";
+import { Icon, IconName } from "@/elements/index";
+import { ProgressBar } from "@/elements/index";
 import { ButtonColor, ButtonSize, ButtonVariant } from "./Button.types";
 
 export interface ButtonProps {

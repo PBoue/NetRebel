@@ -25,7 +25,7 @@
       "@/core/*": ["./src/core/*"],
       "@/elements/*": ["./src/components/elements/*"],
       "@/modules/*": ["./src/components/modules/*"],
-      "@/animations/*": ["./src/components/animations"],
+      "@/animations/*": ["./src/components/animations/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/images/": ["./public/img/*"]

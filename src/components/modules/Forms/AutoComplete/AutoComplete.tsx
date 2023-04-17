@@ -1,8 +1,7 @@
 import classNames from "classnames"
 import React, { ReactNode, useEffect, useReducer } from "react"
-import { Flyout } from "@/modals/Flyouts"
-import { TextType, Text } from "@/common/Text"
-import { Textfield } from "@/components/Forms/Textfield"
+import { Flyout } from "@/modules/index"
+import { TextType, Text, Textfield } from "@/elements/index"
 import { autoCompleteReducer } from "./AutoComplete.reducer"
 import "./AutoComplete.scss"
 import {

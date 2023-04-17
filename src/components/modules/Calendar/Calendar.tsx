@@ -6,7 +6,7 @@ import { CalendarMonth } from "./CalendarMonth/CalendarMonth";
 import { CalendarYear } from "./CalendarYear/CalendarYear";
 import { CalendarTitle } from "./CalendarTitle/CalendarTitle";
 import { calendarReducer } from "./Calendar.reducer";
-import { Icon, IconName } from "@/common/Icons";
+import { Icon, IconName } from "@/elements/index";
 
 import "./Calendar.scss";
 

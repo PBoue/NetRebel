@@ -2,12 +2,9 @@
 
 import classNames from "classnames"
 import React, { ReactNode, useState, useEffect, FC } from "react"
-import { useWindowSize } from "@/hooks/useWindowSize/useWindowSize.hook"
-import { Button, ButtonVariant, ButtonColor } from '@/elements/Button'
-import { Icon, IconName } from "@/elements/Icons"
-import { Logo } from "@/elements/Logo"
-
-import { Modal, ModalSize } from "@/modules/Modal"
+import { useWindowSize } from "@/hooks"
+import { Button, ButtonVariant, ButtonColor, Icon, IconName, Logo } from '@/elements/index'
+import { Modal, ModalSize } from "@/modules/index"
 import "./Header.scss"
 
 export interface HeaderNavItems {
@@ -19,7 +16,7 @@ export interface HeaderNavItems {
 export interface HeaderProps {
     inverted?: boolean
     transparent?: boolean
-    headerNav?: HeaderNavItems[]
+    headerNav: HeaderNavItems[]
     onLogoClick?: () => any
 }
 

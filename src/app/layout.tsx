@@ -3,8 +3,8 @@
 import React, { ReactNode } from "react";
 import classNames from "classnames";
 
-import { Header, HeaderProps, HeaderNavItems } from "@/modules/Header";
-import { Footer, FooterProps, FooterNavItems } from "@/modules/Footer";
+import { Header, HeaderProps, HeaderNavItems } from "@/modules/index";
+import { Footer, FooterProps, FooterNavItems } from "@/modules/index";
 
 import { Montserrat } from 'next/font/google'
 import '@/styles/main.scss'
@@ -30,8 +30,8 @@ export default function RootLayout({
     FooterProps
 }: {
     children: ReactNode
-    HeaderProps?: HeaderProps
-    FooterProps?: FooterProps
+    HeaderProps: HeaderProps
+    FooterProps: FooterProps
 }) {
 
     HeaderProps = {

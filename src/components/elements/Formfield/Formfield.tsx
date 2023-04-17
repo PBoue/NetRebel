@@ -3,7 +3,7 @@ import "./Formfield.scss";
 import classNames from "classnames";
 import React, { ReactNode } from "react";
 
-import { FormFieldError } from "@/components/Forms/FormfieldError";
+import { FormFieldError } from "@/elements/index";
 
 export interface FormFieldProps {
     label?: ReactNode;

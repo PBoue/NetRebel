@@ -1,0 +1,25 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+
+.TextBadge {
+    background-color: transparent;
+    transition: background-color 0.2s ease-out;
+    color: $white;
+    padding: 0 5px;
+    display: inline-flex;
+}
+
+.TextBadge--color-violin {
+    background-color: $primary;
+}
+
+.TextBadge--color-yellow {
+    background-color: $secondary;
+}
+.TextBadge--color-red {
+    background-color: $tertiary;
+}
+
+.TextBadge--color-black {
+    background-color: $black;
+}

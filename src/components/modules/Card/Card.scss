@@ -1,0 +1,160 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+@import "@/styles/mixins";
+
+.Card {
+    color: $black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Card__body {
+    position: relative;
+    background: $white;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.2s transform ease-out, 0.2s box-shadow ease-out;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    &:after {
+        content: "";
+        display: block;
+        transition: all 0.2s ease-out;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 4px solid transparent;
+        position: absolute;
+        border-radius: 8px;
+    }
+}
+
+.Card--dark {
+    .Card__actions,
+    .Card__body {
+        color: $white;
+        background: $grey__light;
+    }
+}
+
+.Card--highlight,
+.Card--selected {
+    .Card__body {
+        &:after {
+            border-color: $primary;
+        }
+
+        .Card__icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+    }
+}
+
+.Card--selected {
+    .Card__body {
+        &:after {
+            border-color: $secondary;
+        }
+    }
+}
+
+.Card:not(.Card--noShadow) {
+    .Card__body {
+
+    }
+}
+
+.Card--isClickable {
+    .Card__body {
+        cursor: pointer;
+    }
+}
+
+.Card:not(.Card--noPadding) {
+    .Card__content {
+        padding: 16px;
+    }
+
+    &.Card--size-large {
+        .Card__header,
+        .Card__content {
+            padding: 30px;
+        }
+    }
+}
+
+.Card__image {
+    .Card--reserveSpaceForImage & {
+        background-color: $grey__light;
+
+        height: 188px;
+    }
+    > img {
+        width: 100%;
+        height: 188px;
+        object-fit: cover;
+        font-size: 10px;
+        line-height: 1.2; // in case the image is not found we do not want the alt text to be big
+    }
+}
+
+.Card__header {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    gap: 4px;
+    padding: 20px;
+}
+
+.Card__highlightText {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 6px;
+    color: $white;
+    background-color: $primary;
+    z-index: 5;
+}
+
+.Card__icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    .Icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.Card__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Card__actions {
+    display: flex;
+    background: $white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 100%;
+    max-width: calc(100% - 20px);
+    margin: 0 10px 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    @include md() {
+        width: min(60%, 733px);
+        max-width: calc(100% - 40px);
+        margin: 0 20px 0 auto;
+    }
+}

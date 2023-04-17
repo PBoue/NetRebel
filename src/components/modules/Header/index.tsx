@@ -1,2 +1,1 @@
-export * from "./Header";
-export type { HeaderNavItem } from "./Header";
+export * from "./Header"

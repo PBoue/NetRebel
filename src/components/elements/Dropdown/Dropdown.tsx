@@ -1,9 +1,9 @@
 import classNames from "classnames"
 import React, { useEffect, useState } from "react"
-import { Icon, IconName } from "@/common/Icons"
-import { BaseInputFieldProps } from "../_base/BaseInputFieldProps.interface"
+import { Icon, IconName } from "@/elements/index"
+import { BaseInputFieldProps } from "@/modules/index"
 import { DropdownOption } from "./Dropdown.types"
-import { Text, TextType } from "@/common/Text"
+import { Text, TextType } from "@/elements/index"
 
 import "./Dropdown.scss";
 

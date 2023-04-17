@@ -2,21 +2,33 @@
 
 import classNames from "classnames";
 import React, { ReactNode, useState } from "react";
-import { Headline, HeadlineType } from "@/common/Headline";
-import { Button, ButtonColor } from "@/elements/Button";
-import { Logo } from "@/components/elements/Logo";
-import { Modal, ModalSize } from "@/modals/Modal";
-import {
+import { 
+    Headline, 
+    HeadlineType, 
+    Button, 
+    ButtonColor, 
+    Logo,    
     Checkbox,
     Dropdown,
     DropdownOption,
     FormField,
     FormFieldError,
     Textarea,
-    Textfield,
-} from "@/forms/index";
-import { useForm, EmailValidator, RequiredValidator } from '@/hooks/useForm'
-import { ContactFormData } from "./ContactForm.types";
+    Textfield
+} from "@/elements/index";
+
+import { 
+    Modal, 
+    ModalSize,
+    ContactFormData
+} from "@/modules/index";
+
+import { 
+    useForm, 
+    EmailValidator, 
+    RequiredValidator 
+} from '@/hooks'
+
 import "./ContactForm.scss";
 
 const DefaultSubjects = [

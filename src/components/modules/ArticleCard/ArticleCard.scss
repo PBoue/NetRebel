@@ -1,0 +1,40 @@
+@import "@/styles/colors";
+@import "@/styles/media-queries";
+.ArticleCard {
+    position: relative;
+    width: fit-content;
+}
+
+.ArticleCard__badge {
+    position: absolute;
+    top: 15px;
+    left: calc(6% + 15px);
+    text-transform: uppercase;
+}
+
+.ArticleCard__image {
+    padding-left: 6%;
+    img {
+        max-width: 100%;
+    }
+}
+
+.ArticleCard__card {
+    width: 92%;
+    transform: translateY(-56px);
+}
+
+.ArticleCard__content {
+    padding: 5px;
+}
+
+.ArticleCard__text {
+    display: flex;
+    flex-direction: column;
+    min-height: 130px;
+    justify-content: center;
+}
+
+.ArticleCard__textLink {
+    width: fit-content;
+}
